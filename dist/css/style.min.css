@@ -84,7 +84,7 @@
 .line {
   height: 1px;
   background: #ccc;
-  margin: 1.5rem 0;
+  margin: 3rem 0;
 }
 .x-large {
   font-size: 4rem;
@@ -288,7 +288,7 @@ img {
 .profile-grid {
   opacity: 0.9;
   display: grid;
-  grid-template-areas: 'top top' 'about about' 'exp edu' 'awe awe' 'github github';
+  grid-template-areas: 'top top' 'about about' 'exp edu' 'awe awe' 'email email';
   grid-gap: 1rem;
 }
 .profile-grid .profile-top {
@@ -347,17 +347,17 @@ img {
 .profile-grid .profile-edu p {
   margin: 0.5rem 0;
 }
-.profile-grid .profile-github {
-  grid-area: github;
+.profile-grid .profile-email {
+  grid-area: email;
 }
-.profile-grid .profile-github .repo {
+.profile-grid .profile-email .repo {
   display: flex;
 }
-.profile-grid .profile-github .repo > div:first-child {
+.profile-grid .profile-email .repo > div:first-child {
   flex: 7;
   flex-basis: 70%;
 }
-.profile-grid .profile-github .repo > div:last-child {
+.profile-grid .profile-email .repo > div:last-child {
   flex: 3;
   flex-basis: 5%;
 }
@@ -378,8 +378,70 @@ img {
 }
 
 .download {
-  color: rgb(233, 69, 10);
+  color: rgb(240, 91, 6);
 }
+.download:hover {
+  color: rgb(59, 40, 33);
+}
+
+.profile-email {
+  border: 0vh;
+  background-color: #141824;
+  color: rgb(243, 239, 239);
+  flex-direction: column;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+textarea {
+  height: 20vh;
+  resize: vertical;
+}
+button {
+  width: 100%;
+  padding: 20px;
+  background-color: #b7c4f8;
+  font-size: 20px;
+  border-radius: 8px;
+  color: #2874a7;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #262e45;
+}
+
+#status {
+  border-radius: 8px;
+}
+#status.success {
+  font-size: 20px;
+  color: rgb(59, 197, 78);
+  animation: status 4s ease forwards;
+}
+#status.error {
+  color: rgb(233, 24, 52);
+  animation: status 4s ease forwards;
+}
+@keyframes status {
+  0% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  90% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
 @media (max-width: 700px) {
   .hide-sm {
     display: none;
@@ -420,7 +482,7 @@ img {
     display: none;
   }
   .profile-grid {
-    grid-template-areas: 'top' 'about' 'exp' 'edu' 'awe' 'github';
+    grid-template-areas: 'top' 'about' 'exp' 'edu' 'awe' 'email';
   }
   .profile-about .skills {
     flex-direction: column;
